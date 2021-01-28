@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE Configure PUBLIC "-//Jetty//Configure//EN" "https://www.eclipse.org/jetty/configure_10_0.dtd">
+
+<Configure class="org.eclipse.jetty.webapp.WebAppContext">
+
+  <Set name="contextPath">/jettyapp</Set>
+  <Set name="resourceBase">webapps/jettyapp</Set>
+  
+  <Set name="securityHandler">
+    <New class="org.eclipse.jetty.security.ConstraintSecurityHandler">
+      <Set name="loginService">
+        <New class="org.eclipse.jetty.jaas.JAASLoginService">
+          <!-- documentation says following line needs to align with
+               <realm-name> element defined in web.xml, but appears to
+               work if not set correctly or completely
+               omitted. probably relevant in more complex setups. -->
+          <!-- <Set name="name">Appy</Set> -->
+          <Set name="loginModuleName">auth</Set>
+        </New>
+      </Set>
+    </New>
+  </Set>
+</Configure>
