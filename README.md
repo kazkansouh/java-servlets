@@ -556,9 +556,8 @@ returns the result page and Jetty returns a redirect to the initially
 requested page.
 
 Also, by just looking at the format of the cookie its easy to
-differentiate what the backend server is. This might be related to one
-of the dependencies, e.g. Tomcat 10 might be more like Jetty - need to
-check this.
+differentiate what the backend server is. I have also confirmed that
+Tomcat 10 uses same format as Tomcat 9.
 
 Jetty seems to struggle when multiple path parameters are present in
 the request (Tomcat did not have this issue). E.g.:
