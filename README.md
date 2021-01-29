@@ -22,12 +22,12 @@ The comparisons were made using
 * `jetty-home-11.0.0`
 
 First download both of these. The `tomcat` directory needs to be
-superimposed/copied into the tomcat directory. E.g. replace
-`server.xml` with the copy in this repo, etc. The `jetty-base`
+superimposed/copied into the tomcat directory. The `jetty-base`
 directory should be sufficient and work as is.
 
-The `server.xml` file was modified by adding a `UserDatabase` (and
-changing listening port/interface).
+Its recommended to change Tomcat's `server.xml` to only bind to local
+interface. In the following its assumed that its bound to
+`localhost:8001`.
 
 As these two versions require slightly different import paths (jetty
 11 has migrated to using `jakata` instead of `javax` import paths the
